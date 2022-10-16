@@ -58,32 +58,32 @@ int main() {
 	// for (auto el : array3) {
 	// 	std::cout << el << ' ';
 	std::ofstream n;
-	n.open("C:\\bootcamp\\2\\merge_sort_output.txt");
+	n.open("C:\\bootcamp\\2\\bubble_sort_output.txt");
 	n << '\n';
 	n.close();
 	std::ofstream out;
-    out.open("C:\\bootcamp\\2\\merge_sort_output.txt", std::ios::app);
+    out.open("C:\\bootcamp\\2\\bubble_sort_output.txt", std::ios::app);
     std::vector<std::vector<int>> arr_of_arrs;
-    for (int i = 1; i < 150; i++){
+    for (int i = 1; i < 1010; i++){
         std::vector<int> curr_arr;
         for (int u = 0; u < i * 2000; u++) {
             curr_arr.push_back(rand());
         }
         arr_of_arrs.push_back(curr_arr);
     }
-    for (int i = 1; i < 100; i+= 10) {
-		std::cout << i << std::endl;
-        auto start = std::chrono::high_resolution_clock::now();
-        bubble_sort(arr_of_arrs[i]);
-        auto end = std::chrono::high_resolution_clock::now();
-		out << std::to_string(i) << " " << std::to_string((end-start).count()) << std::endl;
-    }
-	// for (int i = 1; i < 150; i+= 2) {
+    // for (int i = 1; i < 100; i+= 10) {
 	// 	std::cout << i << std::endl;
     //     auto start = std::chrono::high_resolution_clock::now();
-    //     merge_sort(arr_of_arrs[i]);
+    //     bubble_sort(arr_of_arrs[i]);
     //     auto end = std::chrono::high_resolution_clock::now();
 	// 	out << std::to_string(i) << " " << std::to_string((end-start).count()) << std::endl;
     // }
+	for (int i = 100; i < 1000; i+= 10) {
+		std::cout << i << std::endl;
+        auto start = std::chrono::high_resolution_clock::now();
+        merge_sort(arr_of_arrs[i]);
+        auto end = std::chrono::high_resolution_clock::now();
+		out << std::to_string(i) << " " << std::to_string((end-start).count()) << std::endl;
+    }
 	out.close();
 }
