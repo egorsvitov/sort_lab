@@ -59,7 +59,7 @@ int main() {
     for (int i = 0; i < 10; i++){
 		std::cout << i << std::endl;
         std::vector<int> curr_arr;
-        for (int u = 0; u < i * 1000000; u++) {
+        for (int u = 0; u < i * 10000; u++) {
             curr_arr.push_back(rand());
         }
         arr_of_arrs.push_back(curr_arr);
@@ -74,7 +74,7 @@ int main() {
 		n.close();
 		std::ofstream out;
 		out.open("bubble_sort_output.txt", std::ios::app);
-		for (int i = 1; i < 100; i+= 10) {
+		for (int i = 1; i < 10; i+= 1) {
 			std::cout << i << std::endl;
 			auto start = std::chrono::high_resolution_clock::now();
 			bubble_sort(arr_of_arrs[i]);
