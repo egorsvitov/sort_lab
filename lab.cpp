@@ -88,7 +88,7 @@ int main() {
 		n.close();
 		std::ofstream out;
     	out.open("merge_sort_output.txt", std::ios::app);
-		for (int i = 0; i < 10; i+= 1) {
+		for (int i = 1; i < 10; i+= 1) {
 			std::cout << i << std::endl;
 			auto start = std::chrono::high_resolution_clock::now();
 			merge_sort(arr_of_arrs[i]);
